@@ -3,20 +3,33 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>LogIn</ion-title>
+    <ion-title>Inscription</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <form [formGroup] = "form">
     <ion-card>
-      <ion-card-header>Connexion</ion-card-header>
+      <ion-card-header>Log In</ion-card-header>
       <ion-card-content>
         <ion-chip *ngIf="message"  color="danger">
           <ion-label color="dark">{{message}}</ion-label>
         </ion-chip>
+
         <ion-item>
           <ion-icon name="person"></ion-icon>
+          <ion-label color="primary" stacked></ion-label>
+          <ion-input type="text" formControlName ="nom"  placeholder="Nom"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-icon name="person"></ion-icon>
+          <ion-label color="primary" stacked></ion-label>
+          <ion-input type="text" formControlName = "prenom" placeholder="Prenoms"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-icon name="phone-portrait"></ion-icon>
           <ion-label color="primary" stacked></ion-label>
           <ion-input type="text" formControlName ="numero"  placeholder="Numero"></ion-input>
         </ion-item>
@@ -27,8 +40,7 @@
           <ion-input type="password" formControlName = "mdp" placeholder="Password"></ion-input>
         </ion-item>
         
-      <ion-button color="success"  (click) = "connexion()" >Connexion</ion-button>
-      <ion-button color="secondary" [routerLink] = "['/inscription']" >Inscription</ion-button>
+      <ion-button color="secondary"  (click) = "inscription()" >Login</ion-button>
       </ion-card-content>
     </ion-card>
 </form>
