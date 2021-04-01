@@ -1,9 +1,31 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>LogIn</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <form [formGroup] = "form">
+    <ion-card>
+      <ion-card-header>Log In</ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-icon name="person"></ion-icon>
+          <ion-label color="primary" stacked></ion-label>
+          <ion-input type="text" formControlName ="numero"  placeholder="Numero"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-icon name="key"></ion-icon>
+          <ion-label color="primary" stacked></ion-label>
+          <ion-input type="password" formControlName = "mdp" placeholder="Password"></ion-input>
+        </ion-item>
+        
+      <ion-button color="secondary"  (click) = "connexion()" >Login</ion-button>
+      </ion-card-content>
+    </ion-card>
+</form>
 </ion-content>

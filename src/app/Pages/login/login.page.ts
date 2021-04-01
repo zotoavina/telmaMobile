@@ -1,5 +1,6 @@
 import {  FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,9 @@ export class LoginPage implements OnInit {
 
   form : FormGroup;
   reponse : any ={};
+  message : any;
 
-  constructor(){
+  constructor(private utils_service : UtilsService){
     this.toFormGroup();
   }
     
@@ -30,6 +32,23 @@ export class LoginPage implements OnInit {
     this.reponse["mdp"]  = this.form.get("mdp")?.value;
   }
 
-  connexion(){}
+  connexion(){
+    const success = data =>{
+      console.log(data);
+      if(data.data !== null){
+        this.utils_service.setTokenValue(data.data);
+        // this.router.navigate(['/offre']);
+      }
+      this.message = data.message;
+     }
+
+    const error = data =>{
+      console.log(data);
+      this.message = data.error.message;
+    }
+    this.fillFromForm();
+    this.login_service.login(this.reponse).subscribe(success, error);
+    console.log(this.reponse);
+  }
 
 }

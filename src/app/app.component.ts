@@ -12,8 +12,8 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Se connecter',
-      url: '/folder/Inbox',
+      title: 'Login',
+      url: '/login',
       icon: 'key'  
     },
     {
