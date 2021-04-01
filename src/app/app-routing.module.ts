@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'compte',
     loadChildren: () => import('./Pages/compte/compte.module').then( m => m.ComptePageModule)
+  },
+  {
+    path: 'offre',
+    loadChildren: () => import('./Pages/offre/offre.module').then( m => m.OffrePageModule)
   }
 
 
