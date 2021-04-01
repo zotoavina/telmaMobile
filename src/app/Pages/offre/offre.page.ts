@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./offre.page.scss'],
 })
 export class OffrePage implements OnInit {
+
   offres : any;
   message : any;
   constructor(private offre : OffreService) { }
 
   ngOnInit() {
+    this.listOffres();
   }
 
   listOffres(){

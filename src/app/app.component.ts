@@ -22,9 +22,9 @@ export class AppComponent implements OnInit {
       icon: 'book'  
     },
     {
-      title: 'Inbox',
-      url: '/folder/Inbox',
-      icon: 'mail'
+      title: 'Achat De Forfait',
+      url: '/offre',
+      icon: 'albums'
     },
     {
       title: 'Outbox',

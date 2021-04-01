@@ -1,9 +1,24 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>offre</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Achat De Forfaits</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content *ngIf="offres" >
+    <ion-row *ngFor="let offre of offres" >
+      <ion-col size="1">
+      </ion-col>
+      <ion-col>
+        <ion-button [routerLink] ="'/offre/'+offre.idOffre" expand="block" size ="large" color="warning" class="offre"  >
+          <ion-icon  name="cart" class=""> </ion-icon>
+          {{offre.nomOffre}}
+        </ion-button>
+      </ion-col>
+      <ion-col size="1">
+      </ion-col>
+    </ion-row>
 </ion-content>
+

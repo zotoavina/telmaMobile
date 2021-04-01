@@ -26,7 +26,12 @@ const routes: Routes = [
   {
     path: 'offre',
     loadChildren: () => import('./Pages/offre/offre.module').then( m => m.OffrePageModule)
+  },
+  {
+    path: 'offre/:id',
+    loadChildren: () => import('./Pages/forfait/forfait.module').then( m => m.ForfaitPageModule)
   }
+
 
 
 ]
