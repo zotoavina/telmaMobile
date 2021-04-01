@@ -11,23 +11,22 @@
 <ion-content *ngIf="compte" >
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Bienvenue !!</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>Bienvenue {{compte.prenom}}!!</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      <ion-list>
+      <ion-list >
         <ion-item-divider>
           <ion-label>
-            Section A
+            Detail de votre compte:
           </ion-label>
         </ion-item-divider>
       
-        <ion-item><ion-label>A1</ion-label></ion-item>
-        <ion-item><ion-label>A2</ion-label></ion-item>
-        <ion-item><ion-label>A3</ion-label></ion-item>
-        <ion-item><ion-label>A4</ion-label></ion-item>
-        <ion-item><ion-label>A5</ion-label></ion-item>
+        <ion-item><ion-label color="primary">Nom : {{compte.nom}}</ion-label></ion-item>
+        <ion-item><ion-label color="primary">Prenoms : {{compte.prenom}}</ion-label></ion-item>
+        <ion-item><ion-label color="primary">Numero : {{compte.numero}}</ion-label></ion-item>
+        <ion-item><ion-label color="primary">Solde MVola: {{compte.solde}} Ar</ion-label></ion-item>
+        <ion-item><ion-label color="primary">Credit : {{compte.credit}} Ar</ion-label></ion-item>
         </ion-list>
     </ion-card-content>
   </ion-card>
