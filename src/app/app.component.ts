@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   public appPages = [
     {
       title: 'Login',
-      url: '/login',
+      url: '',
       icon: 'key'  
     },
     {
