@@ -25,6 +25,6 @@ export class OffreService {
     return this.http.get(base_url + url);
   }
 
-  
+    
 
 }

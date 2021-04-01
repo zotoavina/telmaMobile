@@ -1,3 +1,4 @@
+import { base_url } from './../../environments/environment';
 import { Observable, ObservableLike } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -17,8 +18,12 @@ export class ClientService {
     return this.http.post(base_url + url, action, option);
   }
 
+  getClient() : Observable<any>{
+    let url = "api/clients";
+    let option = this.utils.buildHeader();
+    return this.http.get(base_url + url, option);
+  }
 
-  
 
 
 }

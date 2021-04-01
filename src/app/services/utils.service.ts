@@ -52,7 +52,7 @@ export class UtilsService {
  addToken(url : string){
    return url+"?token="+sessionStorage.getItem("token");
  }
-
+  
  buildHeader(): any{
    const isConnected = this.verifyToken() ;
    const options = this.formOption(isConnected);
