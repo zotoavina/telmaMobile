@@ -17,6 +17,11 @@ export class AppComponent implements OnInit {
       icon: 'key'  
     },
     {
+      title: 'Mon Compte',
+      url: '/compte',
+      icon: 'book'  
+    },
+    {
       title: 'Inbox',
       url: '/folder/Inbox',
       icon: 'mail'

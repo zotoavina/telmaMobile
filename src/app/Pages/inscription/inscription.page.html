@@ -10,7 +10,7 @@
 <ion-content>
   <form [formGroup] = "form">
     <ion-card>
-      <ion-card-header>Log In</ion-card-header>
+      <ion-card-header>Inscription</ion-card-header>
       <ion-card-content>
         <ion-chip *ngIf="message"  color="danger">
           <ion-label color="dark">{{message}}</ion-label>
@@ -40,7 +40,8 @@
           <ion-input type="password" formControlName = "mdp" placeholder="Password"></ion-input>
         </ion-item>
         
-      <ion-button color="secondary"  (click) = "inscription()" >Login</ion-button>
+      <ion-button color="success"  (click) = "inscription()" >S'inscrire</ion-button>
+      <ion-button color="secondary" [routerLink] = "['/login']" >J'ai un compte</ion-button>
       </ion-card-content>
     </ion-card>
 </form>
