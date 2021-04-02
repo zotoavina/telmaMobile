@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { OffreService } from '../../services/offre.service';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-forfait',
@@ -14,7 +15,8 @@ export class ForfaitPage implements OnInit {
   message : any;
   offre : any;
 
-  constructor(private offre_service : OffreService, private route : ActivatedRoute) { }
+  constructor(private offre_service : OffreService, private route : ActivatedRoute, 
+    private utils_service:UtilsService, private router : Router) { }
 
   ngOnInit() {
     this.idOffre = this.route.snapshot.paramMap.get("id");

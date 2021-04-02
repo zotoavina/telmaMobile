@@ -1,3 +1,4 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -11,11 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
-    {
-      title: 'Login',
-      url: '',
-      icon: 'key'  
-    },
+   
     {
       title: 'Mon Compte',
       url: '/compte',
@@ -50,19 +47,14 @@ export class AppComponent implements OnInit {
       title: 'Internet',
       url: '/internet',
       icon: 'cloud'
-    },
-    {
-      title: 'Deconnexion',
-      url: '/logout',
-      icon: 'log-out'
     }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-
+  
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private router : Router
   ) {
     this.initializeApp();
   }
@@ -79,5 +71,10 @@ export class AppComponent implements OnInit {
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+  }
+
+  deconnexion(){
+    sessionStorage.removeItem("token");
+    this.router.navigate(["/"]);
   }
 }

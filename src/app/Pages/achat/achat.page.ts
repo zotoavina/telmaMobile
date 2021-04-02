@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActionService } from '../../services/action.service';
@@ -19,7 +19,8 @@ export class AchatPage implements OnInit {
   modes : any = [
     {"id" : "credit","mode":"solde principale"},{"id" :"mvola","mode":"Mvola"}
   ]
-  constructor(private action_service : ActionService, private utils_service: UtilsService, private route : ActivatedRoute) { }
+  constructor(private action_service : ActionService, private utils_service: UtilsService, 
+    private route : ActivatedRoute, private router : Router) { }
 
   ngOnInit() {
     this.idForfait = this.route.snapshot.paramMap.get("id");
@@ -47,11 +48,13 @@ export class AchatPage implements OnInit {
         this.message = data.message;
         console.log(data.data);
       }
+      this.utils_service.redirect(data,401,"/",this.router);
      }
 
     const error = data =>{
       console.log(data);
       this.message = data.error.message;
+      this.utils_service.redirect(data,401,"/",this.router);
     }
     this.fillFromForm();
     console.log(this.reponse);

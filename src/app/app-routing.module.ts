@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
   },
   {
-    path: 'login',
+    path: '',
     loadChildren: () => import('./Pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
@@ -38,7 +38,8 @@ const routes: Routes = [
   {
     path: 'forfait/:id/:nom/achat',
     loadChildren: () => import('./Pages/achat/achat.module').then( m => m.AchatPageModule)
-  },  {
+  },
+  {
     path: 'mvola',
     loadChildren: () => import('./Pages/mvola/mvola.module').then( m => m.MvolaPageModule)
   },

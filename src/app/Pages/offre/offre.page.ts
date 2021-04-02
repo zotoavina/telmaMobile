@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { OffreService } from './../../services/offre.service';
 import { Component, OnInit } from '@angular/core';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-offre',
@@ -10,7 +12,7 @@ export class OffrePage implements OnInit {
 
   offres : any;
   message : any;
-  constructor(private offre : OffreService) { }
+  constructor(private offre : OffreService, private utils_service : UtilsService, private router : Router) { }
 
   ngOnInit() {
     this.listOffres();

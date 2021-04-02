@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ActionService } from '../../services/action.service';
 import { UtilsService } from '../../services/utils.service';
 
@@ -18,7 +18,7 @@ export class MvolaPage implements OnInit {
     {"id" : "1","mode":"depot"},{"id" :"2","mode":"retrait"}
   ]
   constructor(private action_service : ActionService, private utils_service: UtilsService,
-     private route : ActivatedRoute) { }
+     private route : ActivatedRoute,private router:Router) { }
 
   ngOnInit() {
     this.toFormGroup() ;
@@ -44,11 +44,13 @@ export class MvolaPage implements OnInit {
         this.message = data.message;
         console.log(data.data);
       }
+      this.utils_service.redirect(data,401,"/",this.router);
      }
 
     const error = data =>{
       console.log(data);
       this.message = data.error.message;
+      this.utils_service.redirect(data,401,"/",this.router);
     }
     this.fillFromForm();
     console.log(this.reponse);
