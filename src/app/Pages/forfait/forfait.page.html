@@ -22,8 +22,6 @@
     </ion-col>
   </ion-row>
 
-
-
     <ion-row *ngFor="let forfait of forfaits" >
       <ion-col size="1">
       </ion-col>
@@ -33,10 +31,11 @@
         </ion-button>
       </ion-col>
       <ion-col size="2">
-        <ion-fab-button color="warning" size="small">
+        <ion-fab-button [routerLink] ="'/forfait/'+forfait.idForfait+'/info'" color="warning" size="small">
           <ion-icon name="information"></ion-icon>
         </ion-fab-button>
       </ion-col>
     </ion-row>
+
 </ion-content>
 

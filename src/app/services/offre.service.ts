@@ -25,6 +25,9 @@ export class OffreService {
     return this.http.get(base_url + url);
   }
 
-    
+  getForfait(idForfait): Observable<any>{
+    let url = "forfaits/" + idForfait;
+    return this.http.get(base_url + url);
+  }
 
 }

@@ -30,7 +30,18 @@ const routes: Routes = [
   {
     path: 'offre/:id',
     loadChildren: () => import('./Pages/forfait/forfait.module').then( m => m.ForfaitPageModule)
-  }
+  },
+  {
+    path: 'forfait/:id/info',
+    loadChildren: () => import('./Pages/info-forfait/info-forfait.module').then( m => m.InfoForfaitPageModule)
+  },  {
+    path: 'achat',
+    loadChildren: () => import('./Pages/achat/achat.module').then( m => m.AchatPageModule)
+  },
+
+  
+
+
 
 
 

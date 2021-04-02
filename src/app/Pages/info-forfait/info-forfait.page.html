@@ -1,0 +1,31 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Information</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="forfait" >
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Achat de Forfait</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+     <ion-text>
+       <p> {{forfait.nomforfait}}</p>
+       <p>Vous permet de beneficier de :</p>
+       <p *ngFor="let data of forfait.datas" >{{ data.quantite}} {{data.nomData}}</p>
+       <p>Prix :{{forfait.prix}}</p>
+       <p>Duree de validite :{{forfait.validite}} jour</p>
+     </ion-text>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
