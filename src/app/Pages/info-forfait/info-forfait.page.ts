@@ -24,15 +24,12 @@ export class InfoForfaitPage implements OnInit {
 
   getForfait(){
     const success = data => {
-      console.log(data);
       if(data.status == 200){
         this.forfait = data.data;
       }
   }
 
   const error = data => {
-      console.log(data);
-  }
   this.offre_service.getForfait(this.idForfait).subscribe(success, error);
   }
 

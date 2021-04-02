@@ -43,7 +43,6 @@ export class AchatPage implements OnInit {
 
   achatForfait(){
     const success = data =>{
-      console.log(data);
       if(data.status == 200){
         this.message = data.message;
       }
@@ -55,7 +54,6 @@ export class AchatPage implements OnInit {
       this.utils_service.redirect(data,401,"/",this.router);
     }
     this.fillFromForm();
-    console.log(this.reponse);
     this.action_service. achatForfait(this.idForfait,this.reponse).subscribe(success, error);
   }
 

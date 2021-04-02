@@ -40,17 +40,14 @@ export class InscriptionPage implements OnInit {
 
   inscription(){
     const success = data =>{
-      console.log(data);
       if(data.data !== null){
         this.utils_service.setTokenValue(data.data);
-        console.log(data.data);
         this.router.navigate(['/compte']);
       }
       this.message = data.message;
      }
 
     const error = data =>{
-      console.log(data);
       this.message = data.error.message;
     }
     this.fillFromForm();

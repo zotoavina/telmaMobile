@@ -15,8 +15,7 @@ export class ForfaitPage implements OnInit {
   message : any;
   offre : any;
 
-  constructor(private offre_service : OffreService, private route : ActivatedRoute, 
-    private utils_service:UtilsService, private router : Router) { }
+  constructor(private offre_service : OffreService, private route : ActivatedRoute, private utils_service:UtilsService, private router : Router) { }
 
   ngOnInit() {
     this.idOffre = this.route.snapshot.paramMap.get("id");
@@ -26,7 +25,6 @@ export class ForfaitPage implements OnInit {
 
   listForfaits(){
     const success = data => {
-        console.log(data);
         if(data.status == 200){
           this.forfaits = data.data;
         }
@@ -34,7 +32,6 @@ export class ForfaitPage implements OnInit {
     }
 
     const error = data => {
-        console.log(data);
         this.message = data.error.message;
     }
     this.offre_service.forfaitsOffre(this.idOffre).subscribe(success, error);
@@ -42,7 +39,6 @@ export class ForfaitPage implements OnInit {
 
   getOffre(){
     const success = data => {
-      console.log(data);
       if(data.status == 200){
         this.offre = data.data;
       }
@@ -50,7 +46,6 @@ export class ForfaitPage implements OnInit {
   }
 
   const error = data => {
-      console.log(data);
       this.message = data.error.message;
   }
   this.offre_service.getOffre(this.idOffre).subscribe(success, error);
