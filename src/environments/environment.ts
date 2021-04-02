@@ -6,7 +6,10 @@ export const environment = {
   production: false
 };
 
-export const base_url = "http://localhost:8080/";
+// export const base_url = "http://localhost:8080/";
+
+export const base_url = "http://telmaproject.herokuapp.com/";
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

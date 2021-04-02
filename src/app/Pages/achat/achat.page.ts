@@ -46,13 +46,11 @@ export class AchatPage implements OnInit {
       console.log(data);
       if(data.status == 200){
         this.message = data.message;
-        console.log(data.data);
       }
       this.utils_service.redirect(data,401,"/",this.router);
      }
 
     const error = data =>{
-      console.log(data);
       this.message = data.error.message;
       this.utils_service.redirect(data,401,"/",this.router);
     }

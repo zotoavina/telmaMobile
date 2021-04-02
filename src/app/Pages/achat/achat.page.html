@@ -11,6 +11,9 @@
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-header><h2 *ngIf="message" >{{message}}</h2></ion-card-header>
+    <ion-card-content>
   <form [formGroup] = "form">
   <ion-list>
     <ion-radio-group formControlName = "modepaiement" >
@@ -22,10 +25,12 @@
   
       <ion-item *ngFor="let mode of modes" >
         <ion-label>Acheter par {{mode.mode}}</ion-label>
-        <ion-radio color="warning" [value]= mode.id></ion-radio>
+        <ion-radio color="primary" [value]= mode.id></ion-radio>
       </ion-item>
     </ion-radio-group>
-    <ion-button (click)="achatForfait()" color="warning" class="achat">Acheter</ion-button>
+    <ion-button (click)="achatForfait()" color="primary" class="achat">Acheter</ion-button>
   </ion-list>
 </form>
+</ion-card-content>
+</ion-card>
 </ion-content>

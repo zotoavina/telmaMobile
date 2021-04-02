@@ -28,12 +28,12 @@
         <ion-radio-group formControlName = "typeaction" >
           <ion-item *ngFor="let mode of modes" >
             <ion-label>Faire un {{mode.mode}}</ion-label>
-            <ion-radio color="warning" [value]= mode.id></ion-radio>
+            <ion-radio color="primary" [value]= mode.id></ion-radio>
           </ion-item>
         </ion-radio-group>
       
-      <ion-button (click)="action()" color="warning" class="btn">Valider</ion-button>
-      <ion-button color="danger" [routerLink] = "['/compte']"class="btn" >Annuler</ion-button>
+      <ion-button (click)="action()" color="success" class="btn">Valider</ion-button>
+      <ion-button color="primary" [routerLink] = "['/compte']"class="btn" >Annuler</ion-button>
     </ion-card-content>
   </ion-card>
 </form>
