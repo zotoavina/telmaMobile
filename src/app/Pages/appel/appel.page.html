@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Appel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup] = "form">
+  <ion-card>
+    <ion-card-header><h2>Appel</h2></ion-card-header>
+    <ion-card-content>
+      <ion-chip *ngIf="message"  color="success">
+        <ion-label color="dark">{{message}}</ion-label>
+      </ion-chip>
+
+      <ion-item>
+        <ion-label color="primary" stacked> <ion-icon name="phone-portrait"></ion-icon></ion-label>
+        <ion-input type="text" formControlName ="receveur"  placeholder="Numero"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked> <ion-icon name="alarm"></ion-icon></ion-label>
+        <ion-input type="number" formControlName ="duree"  placeholder="Duree"></ion-input>
+      </ion-item>
+      
+      <ion-button (click)="appeler()" color="success" class="btn">
+        <ion-icon name="call"></ion-icon>
+        Appeler</ion-button>
+      <ion-button color="danger" [routerLink] = "['/compte']"class="btn" >Annuler</ion-button>
+    </ion-card-content>
+  </ion-card>
+</form>
+</ion-content>

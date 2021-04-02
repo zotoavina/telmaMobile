@@ -16,6 +16,30 @@ export class ActionService {
       let options = this.utils.buildHeader();
       return this.http.post(base_url + url,reponse,options);
     }
+
+    actionClient(reponse : any){
+      let url = "api/clients/action";
+      let options = this.utils.buildHeader();
+      return this.http.post(base_url + url,reponse,options);
+    }
+    
+    appeler(reponse : any){
+      let url = "api/clients/appels";
+      let options = this.utils.buildHeader();
+      return this.http.post(base_url + url,reponse,options);
+    }
+
+    sms(reponse : any){
+      let url = "/api/clients/sms";
+      let options = this.utils.buildHeader();
+      return this.http.post(base_url + url,reponse,options);
+    }
+
+    consommer(reponse : any){
+      let url = "/api/clients/consommer";
+      let options = this.utils.buildHeader();
+      return this.http.post(base_url + url,reponse,options);
+    }
   
 }
   

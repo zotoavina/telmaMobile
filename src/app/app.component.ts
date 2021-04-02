@@ -27,29 +27,34 @@ export class AppComponent implements OnInit {
       icon: 'albums'
     },
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
+      title: 'Mobile Money',
+      url: '/mvola',
+      icon: 'cash'
     },
     {
-      title: 'Favorites',
-      url: '/folder/Favorites',
-      icon: 'heart'
+      title: 'Recharge',
+      url: '/recharge',
+      icon: 'basket'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
+      title: 'Appel',
+      url: '/appel',
+      icon: 'call'
     },
     {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
+      title: 'Sms',
+      url: '/sms',
+      icon: 'chatbubbles'
     },
     {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
+      title: 'Internet',
+      url: '/internet',
+      icon: 'cloud'
+    },
+    {
+      title: 'Deconnexion',
+      url: '/logout',
+      icon: 'log-out'
     }
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

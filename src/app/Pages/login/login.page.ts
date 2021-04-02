@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import {  FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { UtilsService } from '../../services/utils.service';
@@ -14,7 +15,7 @@ export class LoginPage implements OnInit {
   reponse : any ={};
   message : any;
 
-  constructor(private utils_service : UtilsService, private login_service : LoginService ){
+  constructor(private utils_service : UtilsService, private login_service : LoginService ,private router : Router){
     this.toFormGroup();
   }
     
@@ -39,7 +40,7 @@ export class LoginPage implements OnInit {
       if(data.data !== null){
         this.utils_service.setTokenValue(data.data);
         console.log(data.data);
-        // this.router.navigate(['/offre']);
+        this.router.navigate(['/compte']);
       }
       this.message = data.message;
      }

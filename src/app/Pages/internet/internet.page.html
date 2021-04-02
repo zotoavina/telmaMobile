@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Internet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup] = "form">
+  <ion-card>
+    <ion-card-header><h2>Internet</h2></ion-card-header>
+    <ion-card-content>
+      <ion-chip *ngIf="message"  color="success">
+        <ion-label color="dark">{{message}}</ion-label>
+      </ion-chip>
+
+      <ion-item>
+        <ion-label color="primary" stacked><ion-icon name="calendar"></ion-icon></ion-label>
+        <ion-input type="Date" formControlName ="date" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked><ion-icon name="alarm"></ion-icon></ion-label>
+        <ion-input type="Time" formControlName ="heure" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked><ion-icon name="calculator"></ion-icon></ion-label>
+        <ion-input type="text" formControlName ="quantite"  placeholder="Quantite(Mo)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Usage:</ion-label>
+        
+        <ion-radio-group formControlName = "iddata" >
+          <ion-item *ngFor="let data of datas" >
+            <ion-label>{{data.nomData}}</ion-label>
+            <ion-radio color="warning" [value]= data.idData></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-item>
+      <ion-button (click)="consommer()" color="warning" class="btn">Valider</ion-button>
+      <ion-button color="danger" [routerLink] = "['/compte']"class="btn" >Annuler</ion-button>
+    </ion-card-content>
+  </ion-card>
+</form>
+</ion-content>

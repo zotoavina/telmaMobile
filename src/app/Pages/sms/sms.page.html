@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>SMS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup] = "form">
+  <ion-card>
+    <ion-card-header><h2>Envoyer un message</h2></ion-card-header>
+    <ion-card-content>
+      <ion-chip *ngIf="message"  color="success">
+        <ion-label color="dark">{{message}}</ion-label>
+      </ion-chip>
+
+      <ion-item>
+        <ion-label color="primary" stacked><ion-icon name="phone-portrait"></ion-icon></ion-label>
+        <ion-input type="text" formControlName ="receveur"  placeholder="Numero"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" > <ion-icon name="pencil"></ion-icon></ion-label>
+        <ion-textarea  formControlName ="message"  placeholder="Votre message"></ion-textarea>
+      </ion-item>
+      
+      <ion-button (click)="envoyerSms()" color="warning" class="btn"> 
+        <ion-icon name="send"></ion-icon>
+        Envoyer</ion-button>
+      <ion-button color="danger" [routerLink] = "['/compte']"class="btn" >Annuler</ion-button>
+    </ion-card-content>
+  </ion-card>
+</form>
+</ion-content>

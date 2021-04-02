@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mobile Money</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup] = "form">
+  <ion-card>
+    <ion-card-header><h2> Mobile Money</h2></ion-card-header>
+    <ion-card-content>
+      <ion-chip *ngIf="message"  color="success">
+        <ion-label color="dark">{{message}}</ion-label>
+      </ion-chip>
+
+      <ion-item>
+        <ion-icon name="cash"></ion-icon>
+        <ion-label color="primary" stacked></ion-label>
+        <ion-input type="text" formControlName ="montant"  placeholder="Montant"></ion-input>
+      </ion-item>
+    
+        <ion-radio-group formControlName = "typeaction" >
+          <ion-item *ngFor="let mode of modes" >
+            <ion-label>Faire un {{mode.mode}}</ion-label>
+            <ion-radio color="warning" [value]= mode.id></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      
+      <ion-button (click)="action()" color="warning" class="btn">Valider</ion-button>
+      <ion-button color="danger" [routerLink] = "['/compte']"class="btn" >Annuler</ion-button>
+    </ion-card-content>
+  </ion-card>
+</form>
+</ion-content>

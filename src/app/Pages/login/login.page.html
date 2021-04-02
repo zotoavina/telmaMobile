@@ -16,19 +16,17 @@
           <ion-label color="dark">{{message}}</ion-label>
         </ion-chip>
         <ion-item>
-          <ion-icon name="person"></ion-icon>
-          <ion-label color="primary" stacked></ion-label>
+          <ion-label color="primary" stacked> <ion-icon name="person"></ion-icon></ion-label>
           <ion-input type="text" formControlName ="numero"  placeholder="Numero"></ion-input>
         </ion-item>
       
         <ion-item>
-          <ion-icon name="key"></ion-icon>
-          <ion-label color="primary" stacked></ion-label>
+          <ion-label color="primary" stacked><ion-icon name="key"></ion-icon></ion-label>
           <ion-input type="password" formControlName = "mdp" placeholder="Password"></ion-input>
         </ion-item>
         
-      <ion-button color="success"  (click) = "connexion()" >Connexion</ion-button>
-      <ion-button color="secondary" [routerLink] = "['/inscription']" >Inscription</ion-button>
+      <ion-button color="success"  (click) = "connexion()" class="btn">Connexion</ion-button>
+      <ion-button color="secondary" [routerLink] = "['/inscription']" class="btn">Inscription</ion-button>
       </ion-card-content>
     </ion-card>
 </form>

@@ -35,7 +35,7 @@ export class AchatPage implements OnInit {
   }
 
   fillFromForm() : void {
-    let strDate = this.utils_service.dateToString(new Date());
+    let strDate = this.utils_service.datetimeToString(new Date());
     this.reponse["modepaiement"] = this.form.get("modepaiement")?.value;
     this.reponse["dateachat"]  = strDate;
   }

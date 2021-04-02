@@ -38,7 +38,29 @@ const routes: Routes = [
   {
     path: 'forfait/:id/:nom/achat',
     loadChildren: () => import('./Pages/achat/achat.module').then( m => m.AchatPageModule)
+  },  {
+    path: 'mvola',
+    loadChildren: () => import('./Pages/mvola/mvola.module').then( m => m.MvolaPageModule)
   },
+  {
+    path: 'recharge',
+    loadChildren: () => import('./Pages/recharge/recharge.module').then( m => m.RechargePageModule)
+  },
+  {
+    path: 'appel',
+    loadChildren: () => import('./Pages/appel/appel.module').then( m => m.AppelPageModule)
+  },
+  {
+    path: 'sms',
+    loadChildren: () => import('./Pages/sms/sms.module').then( m => m.SmsPageModule)
+  },
+  {
+    path: 'internet',
+    loadChildren: () => import('./Pages/internet/internet.module').then( m => m.InternetPageModule)
+  },
+
+  
+
 
   
 
