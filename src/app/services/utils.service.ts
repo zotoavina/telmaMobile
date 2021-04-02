@@ -59,6 +59,10 @@ export class UtilsService {
    return options;
  }
   
+ dateToString(date : Date){
+  let strDate = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+   return strDate;
+ }
 
 
 }

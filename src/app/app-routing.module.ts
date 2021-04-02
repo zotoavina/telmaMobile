@@ -34,8 +34,9 @@ const routes: Routes = [
   {
     path: 'forfait/:id/info',
     loadChildren: () => import('./Pages/info-forfait/info-forfait.module').then( m => m.InfoForfaitPageModule)
-  },  {
-    path: 'achat',
+  },
+  {
+    path: 'forfait/:id/:nom/achat',
     loadChildren: () => import('./Pages/achat/achat.module').then( m => m.AchatPageModule)
   },
 

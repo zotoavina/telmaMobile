@@ -1,9 +1,31 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>achat</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Achat de forfait</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <form [formGroup] = "form">
+  <ion-list>
+    <ion-radio-group formControlName = "modepaiement" >
+      <ion-list-header>
+        <ion-text>
+          <h4> Achat de forfait {{nomForfait}}</h4>
+        </ion-text>
+      </ion-list-header>
+  
+      <ion-item *ngFor="let mode of modes" >
+        <ion-label>Acheter par {{mode.mode}}</ion-label>
+        <ion-radio color="warning" [value]= mode.id></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+    <ion-button (click)="achatForfait()" color="warning" class="achat">Acheter</ion-button>
+  </ion-list>
+</form>
 </ion-content>
