@@ -3,7 +3,6 @@ import { Observable, ObservableLike } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UtilsService } from './utils.service';
-import { base_url } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
