@@ -15,6 +15,7 @@ export class InfoForfaitPage implements OnInit {
   forfait : any;
   
   constructor(private offre_service : OffreService, private route : ActivatedRoute,private utils_service: UtilsService,private router : Router){}
+  
   ngOnInit() {
     this.idForfait = this.route.snapshot.paramMap.get("id");
     this.getForfait();
@@ -30,7 +31,9 @@ export class InfoForfaitPage implements OnInit {
   }
 
   const error = data => {
-  this.offre_service.getForfait(this.idForfait).subscribe(success, error);
   }
+    this.offre_service.getForfait(this.idForfait).subscribe(success, error);
+  }
+
 
 }

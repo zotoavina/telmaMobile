@@ -20,7 +20,6 @@ export class OffrePage implements OnInit {
 
   listOffres(){
     const success = data => {
-        console.log(data);
         if(data.status == 200){
           this.offres = data.data;
         }
@@ -28,7 +27,6 @@ export class OffrePage implements OnInit {
     }
 
     const error = data => {
-        console.log(data);
         this.message = data.error.message;
     }
     this.offre.listOffres().subscribe(success, error);

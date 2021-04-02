@@ -42,7 +42,9 @@ export class RechargePage implements OnInit {
      }
 
     const error = data =>{
-      this.message = data.error.message;
+      if(data.status == 400){
+        this.message ="Solde MVola insuffisant pour cette operation";
+      }
       this.utils_service.redirect(data,401,"/",this.router);
     }
     this.fillFromForm();
