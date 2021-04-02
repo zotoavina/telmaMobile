@@ -58,7 +58,11 @@ const routes: Routes = [
   {
     path: 'internet',
     loadChildren: () => import('./Pages/internet/internet.module').then( m => m.InternetPageModule)
+  },  {
+    path: 'data',
+    loadChildren: () => import('./Pages/data/data.module').then( m => m.DataPageModule)
   },
+
 
   
 

@@ -19,6 +19,11 @@ export class AppComponent implements OnInit {
       icon: 'book'  
     },
     {
+      title: 'Info Consommation',
+      url: '/data',
+      icon: 'information-circle'  
+    },
+    {
       title: 'Achat De Forfait',
       url: '/offre',
       icon: 'albums'

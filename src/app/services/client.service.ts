@@ -1,5 +1,5 @@
 import { base_url } from './../../environments/environment';
-import { Observable, ObservableLike } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UtilsService } from './utils.service';
