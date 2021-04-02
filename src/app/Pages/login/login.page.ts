@@ -15,6 +15,19 @@ export class LoginPage implements OnInit {
   reponse : any ={};
   message : any;
 
+  private _numero : any;
+  private _mdp : any;
+
+  get numero(){
+    return this.form.get("numero");
+  }
+
+  get mdp(){
+    return this.form.get("mdp");
+  }
+
+
+
   constructor(private utils_service : UtilsService, private login_service : LoginService ,private router : Router){
     this.toFormGroup();
   }
@@ -24,14 +37,14 @@ export class LoginPage implements OnInit {
   
   toFormGroup() {
     const group: any = {};
-    group["numero"]  = new FormControl("0348818232",Validators.required);
+    group["numero"]  = new FormControl("0348818232",[Validators.required,Validators.pattern("^[0-9]*$")]);
     group["mdp"]  = new FormControl("123456",Validators.required);
     this.form = new FormGroup(group);
   }
 
   fillFromForm() : void {
-    this.reponse["numero"] = this.form.get("numero")?.value;
-    this.reponse["mdp"]  = this.form.get("mdp")?.value;
+    this.reponse["numero"] = this.numero;
+    this.reponse["mdp"]  = this.mdp;
   }
 
   connexion(){
